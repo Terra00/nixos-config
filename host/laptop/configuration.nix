@@ -25,5 +25,5 @@
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
-  system.stateVersion = "24.11";
+  system.stateVersion = "26.05";
 }

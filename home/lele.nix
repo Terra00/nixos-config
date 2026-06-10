@@ -14,7 +14,6 @@
     fastfetch
     ani-cli
     firefox
-    google-chrome
   ];
 
   programs.git = {
