@@ -32,18 +32,22 @@
         ];
       };
 
-      homeConfigurations."lele" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-          permittedInsecurePackages = [
-            "electron-39.8.10"
+      homeConfigurations."lele" =
+        let
+          lib = nixpkgs.lib;
+        in
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config = {
+              allowUnfree = true;
+              allowInsecurePredicate = pkg: lib.hasPrefix "electron" (lib.getName pkg);
+            };
+          };
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            ./home/lele.nix
           ];
         };
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./home/lele.nix
-        ];
-      };
     };
 }
