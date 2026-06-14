@@ -14,6 +14,10 @@
     fastfetch
     ani-cli
     firefox
+    foliate
+    stirling-pdf-desktop
+    onlyoffice-desktopeditors
+    vlc
   ];
 
   programs.git = {
@@ -51,5 +55,10 @@
         "git.enableSmartCommit" = true;
       };
     };
+  };
+
+  xdg.configFile."fastfetch" = {
+    source = ../files/fastfetch;
+    recursive = true;
   };
 }

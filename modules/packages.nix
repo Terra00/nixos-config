@@ -24,13 +24,13 @@
     statix
   ];
 
-environment.shellAliases = {
-    rebuild-sys  = "cd ~/nixos-config && sudo nixos-rebuild switch --flake .#laptop";
+  environment.shellAliases = {
+    rebuild-sys = "cd ~/nixos-config && sudo nixos-rebuild switch --flake .#laptop";
     rebuild-home = "cd ~/nixos-config && home-manager switch --flake .#lele";
-    rebuild-all  = "cd ~/nixos-config && sudo nixos-rebuild switch --flake .#laptop && home-manager switch --flake .#lele";
-    update-all   = "cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch --flake .#laptop && home-manager switch --flake .#lele";
-    clean-all    = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix-store --gc";
+    rebuild-all = "cd ~/nixos-config && sudo nixos-rebuild switch --flake .#laptop && home-manager switch --flake .#lele";
+    update-all = "cd ~/nixos-config && nix flake update && sudo nixos-rebuild switch --flake .#laptop && home-manager switch --flake .#lele";
+    clean-all = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix-store --gc";
     optimize-store = "nix-store --optimize";
-    nvidia-run   = "nvidia-offload";
+    nvidia-run = "nvidia-offload";
   };
 }
