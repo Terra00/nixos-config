@@ -1,19 +1,26 @@
 {
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services = {
+    xserver = {
+      enable = true;
+      xkb.layout = "it";
+    };
 
-  services.xserver.xkb.layout = "it";
-  console.keyMap = "it2";
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      jack.enable = true;
+      # pulse.enable already defaults to true.
+    };
+
+    fprintd.enable = true;
+    flatpak.enable = true;
   };
 
-  services.fprintd.enable = true;
-  services.flatpak.enable = true;
+  console.keyMap = "it2";
 }

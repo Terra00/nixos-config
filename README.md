@@ -17,12 +17,23 @@ La mia configurazione NixOS basata su Flakes.
 ```text
 .
 ├── flake.nix
-├── home/
-├── host/
+├── files/
+├── home/lele.nix
+├── host/laptop/
 └── modules/
+    ├── desktop.nix
+    ├── nvidia.nix
+    ├── packages.nix
+    └── system.nix
 ```
 
 ## Utilizzo
+
+Formattazione del codice (alejandra, esposta come `formatter` nella flake):
+
+```bash
+nix fmt
+```
 
 Ricostruzione del sistema:
 

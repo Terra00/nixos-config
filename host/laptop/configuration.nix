@@ -7,8 +7,10 @@
     ../../modules/packages.nix
   ];
 
-  security.pam.services.login.enableGnomeKeyring = true;
   networking.hostName = "nixos";
+
+  security.pam.services.login.enableGnomeKeyring = true;
+
   users.users.lele = {
     isNormalUser = true;
     extraGroups = [
@@ -17,13 +19,5 @@
     ];
   };
 
-  hardware.nvidia.prime = {
-    offload = {
-      enable = true;
-      enableOffloadCmd = true;
-    };
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
-  };
   system.stateVersion = "26.05";
 }
