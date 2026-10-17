@@ -11,6 +11,8 @@
     pkgs.wget
     pkgs.pciutils
     pkgs.usbutils
+    # Temperature and fan readout, complementary to programs.coolercontrol
+    pkgs.lm_sensors
 
     # Nix tooling
     pkgs.alejandra

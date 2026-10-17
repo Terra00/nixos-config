@@ -9,6 +9,7 @@ La mia configurazione NixOS basata su Flakes.
 - KDE Plasma 6
 - NVIDIA Prime Offload
 - PipeWire
+- CoolerControl
 - Flatpak
 - SOPS-Nix
 
@@ -22,6 +23,7 @@ La mia configurazione NixOS basata su Flakes.
 ├── host/laptop/
 └── modules/
     ├── desktop.nix
+    ├── fan.nix
     ├── nvidia.nix
     ├── packages.nix
     └── system.nix
@@ -50,6 +52,10 @@ home-manager switch --flake .#lele
 ## Note
 
 Questa configurazione è pensata per un laptop con grafica ibrida Intel + NVIDIA e utilizza SOPS-Nix per la gestione dei segreti.
+
+## Ventole
+
+Il controllo delle ventole è gestito da CoolerControl (`programs.coolercontrol` in `modules/fan.nix`): il demone `coolercontrold` rileva i chip Super-I/O e i connettori hwmon, e i profili si configurano dall'interfaccia web su `https://localhost:11987` (certificato self-signed) o dall'app desktop. Il servizio `fancontrol` di lm-sensors non è abilitato di proposito, perché i due demoni scriverebbero sugli stessi canali PWM.
 
 ## Licenza
 

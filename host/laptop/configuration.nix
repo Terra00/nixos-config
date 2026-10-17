@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ../../modules/system.nix
     ../../modules/nvidia.nix
+    ../../modules/fan.nix
     ../../modules/desktop.nix
     ../../modules/packages.nix
   ];
