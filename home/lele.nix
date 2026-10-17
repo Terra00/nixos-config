@@ -32,6 +32,10 @@
     # Office
     pkgs.onlyoffice-desktopeditors
 
+    # System monitoring
+    pkgs.kdePackages.ksystemstats
+    pkgs.kdePackages.plasma-thunderbolt
+
     # Misc
     pkgs.fastfetch
   ];
