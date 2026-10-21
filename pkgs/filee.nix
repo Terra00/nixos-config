@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, autoPatchelfHook, glib, nss, nspr, atk, at-spi2-atk, cups, dbus, expat, libdrm, libxkbcommon, mesa, xorg, gtk3, pango, cairo, alsa-lib, libinput }:
+{ stdenv, fetchurl, autoPatchelfHook, glib, nss, nspr, atk, at-spi2-atk, cups, dbus, expat, libdrm, libxkbcommon, mesa, xorg, gtk3, pango, cairo, alsa-lib, libinput, icu }:
 
 let
   version = "2.0.0";
@@ -11,7 +11,7 @@ stdenv.mkDerivation {
   pname = "filee";
   inherit version src;
   nativeBuildInputs = [ autoPatchelfHook ];
-  buildInputs = [ glib nss nspr atk at-spi2-atk cups dbus expat libdrm libxkbcommon mesa xorg.libX11 xorg.libXcomposite xorg.libXdamage xorg.libXext xorg.libXfixes xorg.libXrandr xorg.libXt xorg.libXtst libinput gtk3 pango cairo alsa-lib ];
+  buildInputs = [ glib nss nspr atk at-spi2-atk cups dbus expat libdrm libxkbcommon mesa xorg.libX11 xorg.libXcomposite xorg.libXdamage xorg.libXext xorg.libXfixes xorg.libXrandr xorg.libXt xorg.libXtst libinput gtk3 pango cairo alsa-lib icu ];
   autoPatchelfIgnoreMissingDeps = [ "liblttng-ust.so.0" ];
   installPhase = ''
     mkdir -p $out/bin $out/opt/filee
