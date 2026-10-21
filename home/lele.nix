@@ -15,7 +15,7 @@
     # Custom packages (manually managed)
     (import ../pkgs { inherit pkgs; }).opencode-desktop
     (import ../pkgs { inherit pkgs; }).filee
-    (import ../pkgs { inherit pkgs; }).flc
+    # flc temporarily disabled due to glibc mismatch
 
     # Editors / viewers
     pkgs.kdePackages.kate
