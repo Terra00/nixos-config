@@ -12,8 +12,5 @@ appimageTools.wrapType2 {
   inherit src;
   pname = "opencode-desktop";
   inherit version;
-  extraInstallCommands = ''
-    install -m 444 -D ${appimageContents}/opencode.desktop $out/share/applications/opencode.desktop
-    install -m 444 -D ${appimageContents}/opencode.png $out/share/icons/hicolor/512x512/apps/opencode.png
-  '';
+  extraInstallCommands = "";
 }
