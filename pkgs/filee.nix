@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, autoPatchelfHook, glib, nss, nspr, atk, at-spi2-atk, cups, dbus, expat, libdrm, libxkbcommon, mesa, xorg, gtk3, pango, cairo, alsa-lib }:
+{ stdenv, fetchurl, autoPatchelfHook, glib, nss, nspr, atk, at-spi2-atk, cups, dbus, expat, libdrm, libxkbcommon, mesa, xorg, gtk3, pango, cairo, alsa-lib, libinput }:
 
 let
   version = "2.0.0";
