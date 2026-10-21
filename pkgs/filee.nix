@@ -20,5 +20,5 @@ stdenv.mkDerivation {
       --set DOTNET_SYSTEM_GLOBALIZATION_INVARIANT 1 \
       --unset DOTNET_OPENSSL_VERSION_OVERRIDE \
       --prefix LD_LIBRARY_PATH : ${openssl.out}/lib
-  '`;
+  '';
 }
