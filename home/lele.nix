@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   home = {
     username = "lele";
     homeDirectory = "/home/lele";
@@ -13,9 +9,7 @@
 
   home.packages = [
     # Custom packages (manually managed)
-    (import ../pkgs { inherit pkgs; }).opencode-desktop
-    (import ../pkgs { inherit pkgs; }).filee
-    # flc temporarily disabled due to glibc mismatch
+    (import ../pkgs {inherit pkgs;}).opencode-desktop
 
     # Editors / viewers
     pkgs.kdePackages.kate
