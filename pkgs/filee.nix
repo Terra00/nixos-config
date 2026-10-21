@@ -16,6 +16,6 @@ stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out/bin $out/opt/filee
     cp -r ./* $out/opt/filee/
-    makeWrapper $out/opt/filee/Filee $out/bin/filee --set DOTNET_SYSTEM_GLOBALIZATION_INVARIANT 1
+    makeWrapper $out/opt/filee/Filee $out/bin/filee --set DOTNET_SYSTEM_GLOBALIZATION_INVARIANT 1 --set DOTNET_OPENSSL_VERSION_OVERRIDE 3
   '';
 }
