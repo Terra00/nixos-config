@@ -16,6 +16,6 @@ stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out/bin $out/opt/filee
     cp -r ./* $out/opt/filee/
-    ln -s $out/opt/filee/filee $out/bin/filee
+    ln -s $out/opt/filee/Filee $out/bin/filee
   '';
 }
